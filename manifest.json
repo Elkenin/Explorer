@@ -1,16 +1,16 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Gwapo ko",
-    "description": "§7§¶The Supreme Anti-Cheat Solution for Minecraft Bedrock\n§cBeta-API required",
+    "name": "Explorer",
+    "description": "§7§¶Explorer - script\n§cBeta-API required",
     "uuid": "f1378620-9484-4cab-a16b-c231754d8599",
     "version": [3, 0, 21],
     "min_engine_version": [1, 20, 60]
   },
   "metadata": {
-    "authors": ["jasonlaubb, Hutao999999, ravriv, RaMiGamerDev, notthinghere, amico_nabbo, kris02, Selder578"],
-    "license": "AGPLv3",
-    "url": "https://github.com/jasonlaubb/Matrix-AntiCheat"
+    "authors": ["Frost, Jhon"],
+    "license": "NONE",
+    "url": "https://github.com/Elkenin/Explorer"
   },
   "modules": [
     {
