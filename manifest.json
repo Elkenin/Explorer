@@ -1,0 +1,35 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Gwapo ko",
+    "description": "§7§¶The Supreme Anti-Cheat Solution for Minecraft Bedrock\n§cBeta-API required",
+    "uuid": "f1378620-9484-4cab-a16b-c231754d8599",
+    "version": [3, 0, 21],
+    "min_engine_version": [1, 20, 60]
+  },
+  "metadata": {
+    "authors": ["jasonlaubb, Hutao999999, ravriv, RaMiGamerDev, notthinghere, amico_nabbo, kris02, Selder578"],
+    "license": "AGPLv3",
+    "url": "https://github.com/jasonlaubb/Matrix-AntiCheat"
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "9c1088b6-cbbc-47a4-a859-8cd2b1f592d4",
+      "version": [1, 0, 0]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "30893711-f61f-4a90-8420-dfd73f25caa7",
+      "version": [0, 0, 1],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.9.0-beta"
+    }
+  ]
+}
