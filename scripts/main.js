@@ -16,7 +16,7 @@ world.beforeEvents.chatSend.subscribe((data)=>{
     else if (chat == "+tp lobby") {
         world.getAllPlayers().forEach(e=>{
             if(e.name == data.sender.name) {
-                e.runCommandAsync(`tp @s 0 15 0`);
+                e.runCommandAsync(`tp @s 2 123 -21`);
             }
             
           })
@@ -25,7 +25,7 @@ world.beforeEvents.chatSend.subscribe((data)=>{
     else if (chat == "+tp nether") {
         world.getAllPlayers().forEach(e=>{
             if(e.name == data.sender.name) {
-                e.runCommandAsync(`tp @s[scores={Merit=1500..}] 0 15 0`);
+                e.runCommandAsync(`tp @s[scores={Merit=1500..}] 191 163 -21`);
                 e.runCommandAsync(`say @s[scores={Merit=..1500}] not qualified`);
             }
             
