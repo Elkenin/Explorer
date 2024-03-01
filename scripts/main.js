@@ -2,6 +2,9 @@
 import { world } from '@minecraft/server';
 
 const prefix = "+";
+// function testDimension(player) {
+
+// }
 
 world.beforeEvents.chatSend.subscribe((data)=>{
     let words = ["b1lat", "b3lat", "belat", "bilat", "bob0", "bobo", "bobp", "bugaret", "bulbol", "d1ckson", "fck u btch", "fcker", "fuck you", "gago", "k1ffy", "k3ffy", "kepay", "kiffy", "kys", "nigga", "p3n1s", "p3nis", "pakshet", "pakyu", "pen1s", "pota", "punyeta", "puta", "putragis", "shet", "stupid fkcer", "stupid shit", "t1t3", "tanga", "tangina mo", "tarantado", "tit1", "tit3", "tite", "ulol", "walang kwenta"];
@@ -13,17 +16,19 @@ world.beforeEvents.chatSend.subscribe((data)=>{
         world.getDimension("overworld").runCommandAsync(`tell ${data.sender.name} No bad words allowed`);
     }
     //TELEPORT TO LOBBY
-    else if (chat == "+tp lobby") {
-        world.getAllPlayers().forEach(e=>{
+    else if (chat == prefix+"tp lobby") {
+        data.cancel = true;
+        world.getDimension("overworld").getPlayers().forEach(e=>{
             if(e.name == data.sender.name) {
                 e.runCommandAsync(`tp @s 2 123 -21`);
+                return true;
             }
-            
           })
     }
     //TELEPORT TO NETHER
-    else if (chat == "+tp nether") {
-        world.getAllPlayers().forEach(e=>{
+    else if (chat == prefix+"tp nether") {
+        data.cancel = true;
+        world.getDimension("overworld").getPlayers().forEach(e=>{
             if(e.name == data.sender.name) {
                 e.runCommandAsync(`tp @s[scores={Merit=1500..}] 191 163 -21`);
                 e.runCommandAsync(`say @s[scores={Merit=..1500}] not qualified`);
@@ -32,8 +37,9 @@ world.beforeEvents.chatSend.subscribe((data)=>{
           })
     }
     //TELEPORT TO GUILD
-    else if (chat == "+tp guild") {
-        world.getAllPlayers().forEach(e=>{
+    else if (chat == prefix+"tp guild") {
+        data.cancel = true;
+        world.getDimension("overworld").getPlayers().forEach(e=>{
             if(e.name == data.sender.name) {
                 e.runCommandAsync(`tp @s[tag=blue] 5580	68 -4239`);
                 e.runCommandAsync(`tp @s[tag=red] 1775	64	-2626`);
