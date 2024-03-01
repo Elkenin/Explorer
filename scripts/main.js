@@ -45,7 +45,7 @@ world.beforeEvents.chatSend.subscribe((data)=>{
                 e.runCommandAsync(`tp @s[tag=yellow] 959 68 539`);
                 e.runCommandAsync(`tp @s[tag=brown] 2771 70	2639`);
                 e.runCommandAsync(`tp @s[tag=black] -3431 71 1872`);
-                e.runCommandAsync(`tp @s[tag=dark_green] 2471114 6182`);
+                e.runCommandAsync(`tp @s[tag=darkgreen] 2471 114 6182`);
                 e.runCommandAsync(`tp @s[tag=gray] -3868 70 -3176`);
             }
           })
