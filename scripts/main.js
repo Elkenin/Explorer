@@ -26,6 +26,9 @@ system.runInterval(()=>{
         if(isShowActionbar.getScore(e)==1) {
             e.runCommandAsync(`titleraw @s[tag=!admin] actionbar {"rawtext":[{"text":"§9Merit:§f ${merit.getScore(e)}"},{"text":"\n§eGold:§f ${gold.getScore(e)}"}]}`); //Actionbar
         }
+
+        //AUTO RANK
+        
         
     })
 }, 0); //Interval....20 = 1seconds
@@ -68,9 +71,8 @@ world.beforeEvents.chatSend.subscribe((data)=>{
         world.getDimension("overworld").getPlayers().forEach(e=>{
             if(e.name == player.name) {
                 e.runCommandAsync(`tp @s[scores={Merit=1500..}] 191 163 -21`);
-                e.runCommandAsync(`say @s[scores={Merit=..1500}] not qualified`);
+                e.runCommandAsync(`tell @s[scores={Merit=..1500}] not qualified`);
             }
-            
           })
     }
     //TELEPORT TO GUILD
