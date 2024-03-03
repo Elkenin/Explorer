@@ -29,7 +29,6 @@ system.runInterval(()=>{
 
         //AUTO RANK
         
-        
     })
 }, 0); //Interval....20 = 1seconds
 
