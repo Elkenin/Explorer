@@ -14,9 +14,10 @@ const guild = {
     Helio_Imperium: ["HI","§d", "magenta", {x: -3859, y:80, z:-3228}],
     Minokawa: ["Mi","§6", "orange", {x: -5306, y:77, z:4987}],
     Celeste: ["Ce","§7", "gray", {x: -3868, y:70, z: -3176}],
-    Shinsei: ["Sh","§2", "darkgreen", {x: 2471, y:114, z: 6182}]
+    Shinsei: ["Sh","§2", "darkgreen", {x: 2471, y:114, z: 6182}],
     
-    ,Mercenary: ["GL","§r", "guildless", {x: 5580, y:68, z:-4239}] //Guildless - beta
+    Mercenary: ["GL","§r", "guildless", {x: 5580, y:68, z:-4239}], //Guildless - beta
+    Admin: ["§2§lADMIN","§2", "admin", {x: 0, y:0, z: 0}]
     }
 function cmdScoreboard(player, type, scoreId, score) {
     player.runCommandAsync(`scoreboard players ${type} @s[tag=!admin] ${scoreId} ${score}`)  //Changescoreboard Value
@@ -33,8 +34,7 @@ function chatRank(player, clanTag, color, Merit, msg, data) {
  }
 
 function meritRank(score) { //AUTO MERIT BASED RANK
-    if(score <= 500 ) return "E";
-     else if (score >= 500 && score < 1000) return "E"
+    if(score >= 500 && score < 1000) return "E";
      else if (score >= 1000 && score < 1500) return "D";
      else if (score >= 1500 && score < 2500) return "C";
      else if (score >= 2500 && score < 4000) return "B";
@@ -105,7 +105,7 @@ world.beforeEvents.chatSend.subscribe((data)=>{
         world.getDimension("overworld").getPlayers().forEach(e=>{
             if(e.name == player.name) {
                 e.runCommandAsync(`tp @s[scores={Merit=1500..}] 191 163 -21`);
-                e.runCommandAsync(`tell @s[scores={Merit=..1500}] not qualified`);
+                e.runCommandAsync(`tell @s[scores={Merit=..1499}] not qualified`);
             }
           })
     }
