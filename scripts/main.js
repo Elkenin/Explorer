@@ -32,16 +32,17 @@ function chatRank(player, clanTag, color, Merit, msg, data) {
     player.runCommandAsync(`tp @s ${x} ${y} ${z}`)
  }
 
-function meritRank(score) { //MeritRAnk
-    if(score >= 500 && score < 1000) return "E";
-     else if(score >= 1000 && score < 1500) return "D";
+function meritRank(score) { //AUTO MERIT BASED RANK
+    if(score <= 500 ) return "E";
+     else if (score >= 500 && score < 1000) return "E"
+     else if (score >= 1000 && score < 1500) return "D";
      else if (score >= 1500 && score < 2500) return "C";
      else if (score >= 2500 && score < 4000) return "B";
      else if (score >= 4000 && score < 6500) return "A";
      else if (score >= 6500 && score < 10500) return "S";
-     else if (score >= 10500 && score < 17500) return "SS";
-     else if (score >= 17500 && score < 27500) return "SSS";
-     else if (score >= 27500) return "CLASS LEGENDARY";
+     else if (score >= 10500 && score < 17500) return "SR";
+     else if (score >= 17500 && score < 27500) return "SU";
+     else if (score >= 27500) return "L";
      else return "F";
 }
 
@@ -49,7 +50,7 @@ system.runInterval(()=>{
     world.getAllPlayers().forEach(e=>{
         const merit = world.scoreboard.getObjective("Merit"); //Get player Merit
         const gold = world.scoreboard.getObjective("Gold"); //Get player Gold
-        const isShowActionbar = world.scoreboard.getObjective("isShowActionbar");
+        const isShowActionbar = world.scoreboard.getObjective("isShowActionbar"); //SHOW SCORE IN ACTIONBAR
 
             if(merit==undefined) {
                 world.scoreboard.addObjective("Merit", "Merit").setScore(e,0); // Add objective if objective is undefined
@@ -63,7 +64,6 @@ system.runInterval(()=>{
             if(isShowActionbar.getScore(e)==1) {
                 e.runCommandAsync(`titleraw @s[tag=!admin] actionbar {"rawtext":[{"text":"§9Merit:§f ${merit.getScore(e)}"},{"text":"\n§eGold:§f ${gold.getScore(e)}"}]}`); //Actionbar
             }
-       //AUTO RANK
     })
 }, 0); //Interval....20 = 1seconds
 
