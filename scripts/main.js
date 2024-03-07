@@ -17,7 +17,8 @@ const guild = {
     Shinsei: ["Sh","§2", "darkgreen", {x: 2471, y:114, z: 6182}],
     
     Mercenary: ["GL","§r", "guildless", {x: 5580, y:68, z:-4239}], //Guildless - beta
-    Admin: ["§2§lADMIN","§2", "admin", {x: 0, y:0, z: 0}]
+
+    Admin: ["§2§lADMIN","§2", "admin", {x: 0, y:0, z: 0}] // ADMIN
     }
 function cmdScoreboard(player, type, scoreId, score) {
     player.runCommandAsync(`scoreboard players ${type} @s[tag=!admin] ${scoreId} ${score}`)  //Changescoreboard Value
